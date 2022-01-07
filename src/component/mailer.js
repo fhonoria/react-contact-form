@@ -2,6 +2,21 @@ import React from "react";
 import emailjs from "emailjs-com";
 
 function mailer() {
+  function sendEmail(event) {
+    event.preventDefault();
+    emailjs
+      .sendForm(
+        "service_escf7mf",
+        "template_lvzhhma",
+        event.target,
+        "user_9W0zDMPkyDJCBEnO65xtf"
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  }
+
   return (
     <div className="mailer">
       <div
@@ -16,7 +31,11 @@ function mailer() {
         }}
       >
         <h1 style={{ marginTop: "25px" }}>Contact Form</h1>
-        <form className="row" style={{ margin: "25px 85px 75px 100px" }}>
+        <form
+          className="row"
+          style={{ margin: "25px 85px 75px 100px" }}
+          onSubmit={sendEmail}
+        >
           <label>Name</label>
           <input type="text" name="name" className="form-control" />
 
