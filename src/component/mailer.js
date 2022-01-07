@@ -11,10 +11,11 @@ function mailer() {
         event.target,
         "user_9W0zDMPkyDJCBEnO65xtf"
       )
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => console.log(err));
+      .then(alertMessage);
+  }
+
+  function alertMessage() {
+    alert("Thank you for your message");
   }
 
   return (
