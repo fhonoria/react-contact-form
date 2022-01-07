@@ -16,6 +16,7 @@ function mailer() {
 
   function alertMessage() {
     alert("Thank you for your message");
+    window.location.reload();
   }
 
   return (
